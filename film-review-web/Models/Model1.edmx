@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MoviesDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="userpassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="genres">
+          <Key>
+            <PropertyRef Name="genresId" />
+          </Key>
+          <Property Name="genresId" Type="int" Nullable="false" />
+          <Property Name="genresName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="movies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="200" />
+          <Property Name="releaseDate" Type="varchar" MaxLength="50" />
+          <Property Name="runTime" Type="varchar" MaxLength="50" />
+          <Property Name="rating" Type="float" />
+          <Property Name="overview" Type="varchar(max)" />
+          <Property Name="genresId" Type="int" />
+          <Property Name="userId" Type="int" />
+        </EntityType>
+        <Association Name="FK__movies__genresId__173876EA">
+          <End Role="genres" Type="Self.genres" Multiplicity="0..1" />
+          <End Role="movies" Type="Self.movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genres">
+              <PropertyRef Name="genresId" />
+            </Principal>
+            <Dependent Role="movies">
+              <PropertyRef Name="genresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__movies__userId__182C9B23">
+          <End Role="account" Type="Self.account" Multiplicity="0..1" />
+          <End Role="movies" Type="Self.movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="movies">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MoviesDbModelStoreContainer">
+          <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="genres" EntityType="Self.genres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="movies" EntityType="Self.movies" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__movies__genresId__173876EA" Association="Self.FK__movies__genresId__173876EA">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="movies" EntitySet="movies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__movies__userId__182C9B23" Association="Self.FK__movies__userId__182C9B23">
+            <End Role="account" EntitySet="account" />
+            <End Role="movies" EntitySet="movies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MoviesDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="userpassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="movies" Relationship="Self.FK__movies__userId__182C9B23" FromRole="account" ToRole="movies" />
+        </EntityType>
+        <EntityType Name="genres">
+          <Key>
+            <PropertyRef Name="genresId" />
+          </Key>
+          <Property Name="genresId" Type="Int32" Nullable="false" />
+          <Property Name="genresName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="movies" Relationship="Self.FK__movies__genresId__173876EA" FromRole="genres" ToRole="movies" />
+        </EntityType>
+        <EntityType Name="movies">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="releaseDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="runTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rating" Type="Double" />
+          <Property Name="overview" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="genresId" Type="Int32" />
+          <Property Name="userId" Type="Int32" />
+          <NavigationProperty Name="account" Relationship="Self.FK__movies__userId__182C9B23" FromRole="movies" ToRole="account" />
+          <NavigationProperty Name="genres" Relationship="Self.FK__movies__genresId__173876EA" FromRole="movies" ToRole="genres" />
+        </EntityType>
+        <Association Name="FK__movies__userId__182C9B23">
+          <End Role="account" Type="Self.account" Multiplicity="0..1" />
+          <End Role="movies" Type="Self.movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="account">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="movies">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__movies__genresId__173876EA">
+          <End Role="genres" Type="Self.genres" Multiplicity="0..1" />
+          <End Role="movies" Type="Self.movies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genres">
+              <PropertyRef Name="genresId" />
+            </Principal>
+            <Dependent Role="movies">
+              <PropertyRef Name="genresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MoviesDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="account" EntityType="Self.account" />
+          <EntitySet Name="genres" EntityType="Self.genres" />
+          <EntitySet Name="movies" EntityType="Self.movies" />
+          <AssociationSet Name="FK__movies__userId__182C9B23" Association="Self.FK__movies__userId__182C9B23">
+            <End Role="account" EntitySet="account" />
+            <End Role="movies" EntitySet="movies" />
+          </AssociationSet>
+          <AssociationSet Name="FK__movies__genresId__173876EA" Association="Self.FK__movies__genresId__173876EA">
+            <End Role="genres" EntitySet="genres" />
+            <End Role="movies" EntitySet="movies" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MoviesDbModelStoreContainer" CdmEntityContainer="MoviesDbEntities">
+          <EntitySetMapping Name="account">
+            <EntityTypeMapping TypeName="MoviesDbModel.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="userpassword" ColumnName="userpassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="genres">
+            <EntityTypeMapping TypeName="MoviesDbModel.genres">
+              <MappingFragment StoreEntitySet="genres">
+                <ScalarProperty Name="genresId" ColumnName="genresId" />
+                <ScalarProperty Name="genresName" ColumnName="genresName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="movies">
+            <EntityTypeMapping TypeName="MoviesDbModel.movies">
+              <MappingFragment StoreEntitySet="movies">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="releaseDate" ColumnName="releaseDate" />
+                <ScalarProperty Name="runTime" ColumnName="runTime" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="overview" ColumnName="overview" />
+                <ScalarProperty Name="genresId" ColumnName="genresId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
