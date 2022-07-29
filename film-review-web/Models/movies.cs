@@ -22,6 +22,7 @@ namespace film_review_web.Models
         public string overview { get; set; }
         public Nullable<int> genresId { get; set; }
         public Nullable<int> userId { get; set; }
+        public string images { get; set; }
     
         public virtual account account { get; set; }
         public virtual genres genres { get; set; }
