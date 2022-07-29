@@ -168,6 +168,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\icofont7858.svg" />
     <Content Include="Content\icofont.css" />
+    <Content Include="Content\icofont.min.css" />
     <Content Include="Content\img\author.png" />
     <Content Include="Content\img\blog-detail.png" />
     <Content Include="Content\img\breadcrumb.png" />
@@ -183,6 +184,7 @@
     <Content Include="Content\img\hero-area.png" />
     <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo\4286961df7084e8aa9e45661cf3e3cc6 %281%29.png" />
     <Content Include="Content\img\news\news1.jpg" />
     <Content Include="Content\img\news\news2.jpg" />
     <Content Include="Content\img\news\news3.jpg" />

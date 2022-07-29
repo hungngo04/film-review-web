@@ -14,6 +14,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/slicknav.min.css" media="all" />
     <!-- Iconfont CSS -->
     <link rel="stylesheet" type="text/css" href="~/Content/icofont.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/Content/icofont.min.css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Owl carousel CSS -->
     <link rel="stylesheet" type="text/css" href="~/Content/owl.carousel.css">
     <!-- Popup CSS -->
@@ -45,11 +47,10 @@
                             <option value="Movies">Movies</option>
                         </select>
                         <input type="text" />
-                        <button><i class="icofont icofont-search"></i></button>
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                     <ul>
                         <li><a href="#">Welcome Guest!</a></li>
-                        <li><a class="login-popup" href="#">Login</a></li>
                     </ul>
                 </div>
                 <div class="menu-area">
@@ -62,49 +63,18 @@
                             <li><a href="top-movies.html">Top Movies</a></li>
                             <li><a href="blog.html">News</a></li>
                             <li>
-                                <a href="#">Pages <i class="icofont icofont-simple-down"></i></a>
+                                <a href="#">Pages </a>
                                 <ul>
                                     <li><a href="blog-details.html">Blog Details</a></li>
                                     <li><a href="movie-details.html">Movie Details</a></li>
                                 </ul>
                             </li>
-                            <li><a class="theme-btn" href="#"><i class="icofont icofont-ticket"></i> Tickets</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <div class="login-area">
-        <div class="login-box">
-            <a href="#"><i class="icofont icofont-close"></i></a>
-            <h2>LOGIN</h2>
-            <form action="#">
-                <h6>USERNAME OR EMAIL ADDRESS</h6>
-                <input type="text" />
-                <h6>PASSWORD</h6>
-                <input type="text" />
-                <div class="login-remember">
-                    <input type="checkbox" />
-                    <span>Remember Me</span>
-                </div>
-                <div class="login-signup">
-                    <span>SIGNUP</span>
-                </div>
-                <a href="#" class="theme-btn">LOG IN</a>
-                <span>Or Via Social</span>
-                <div class="login-social">
-                    <a href="#"><i class="icofont icofont-social-facebook"></i></a>
-                    <a href="#"><i class="icofont icofont-social-twitter"></i></a>
-                    <a href="#"><i class="icofont icofont-social-linkedin"></i></a>
-                    <a href="#"><i class="icofont icofont-social-google-plus"></i></a>
-                    <a href="#"><i class="icofont icofont-camera"></i></a>
-                </div>
-            </form>
-
-        </div>
-    </div>
-
     <!-- header section end -->
    
     @RenderBody()
