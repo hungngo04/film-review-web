@@ -12,7 +12,7 @@ namespace film_review_web.Controllers
         MoviesDbEntities db = new MoviesDbEntities();
         public ActionResult Index()
         {
-            return View(db.movies.ToList());
+            return View();
         }
 
         public ActionResult About()
@@ -31,7 +31,7 @@ namespace film_review_web.Controllers
 
         public ActionResult CategoriesFilter()
         {
-            return PartialView(db.genres.ToList());
+            return PartialView();
         }
     }
 }
