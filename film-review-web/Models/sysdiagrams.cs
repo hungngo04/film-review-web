@@ -12,19 +12,12 @@ namespace film_review_web.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class movies
+    public partial class sysdiagrams
     {
-        public int id { get; set; }
         public string name { get; set; }
-        public string releaseDate { get; set; }
-        public string runTime { get; set; }
-        public Nullable<double> rating { get; set; }
-        public string overview { get; set; }
-        public Nullable<int> genresId { get; set; }
-        public Nullable<int> userId { get; set; }
-        public string images { get; set; }
-    
-        public virtual account account { get; set; }
-        public virtual genres genres { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

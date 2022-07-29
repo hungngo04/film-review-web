@@ -28,5 +28,6 @@ namespace film_review_web.Models
         public virtual DbSet<account> account { get; set; }
         public virtual DbSet<genres> genres { get; set; }
         public virtual DbSet<movies> movies { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
