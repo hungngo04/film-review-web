@@ -13,7 +13,6 @@ namespace film_review_web.Controllers
     {
         string ConnectionString = "Data Source=TIENHUNGBA01; Initial Catalog=MoviesDB; Integrated Security=SSPI;";
         MoviesDbEntities db = new MoviesDbEntities();
-
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
         // GET: Login
@@ -33,15 +32,20 @@ namespace film_review_web.Controllers
             if (dr.Read())
             {
                 conn.Close();
-                return View("Index");
+                Session["username"] = acc.username;
+                return RedirectToAction("Index", "Home", new { username = acc.username });
             }
             else
             {
                 conn.Close();
-                return View("Error");
+                return View("Login");
             }
         }
 
-
+        public ActionResult Logout()
+        {
+            Session.Remove("username");
+            return View("Login");
+        }
     }
 }

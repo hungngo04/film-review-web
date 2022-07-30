@@ -10,9 +10,17 @@ namespace film_review_web.Controllers
     public class HomeController : Controller
     {
         MoviesDbEntities db = new MoviesDbEntities();
-        public ActionResult Index()
+        public ActionResult Index(string username)
         {
-            return View();
+            if(Session["username"] == null)
+            {
+                return RedirectToAction("Login", "Login");
+            }
+            else
+            {
+                ViewBag.username = username;
+                return View();
+            }
         }
 
         public ActionResult About()
