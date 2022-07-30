@@ -364,7 +364,7 @@ option {
 	color: #000;
 }
 .header-right form select {
-    background: url('../img/select-icon.png') no-repeat right center;
+    background: url('~/Content/img/select-icon.png') no-repeat right center;
     color: #fff;
     padding: 0 20px 0 30px;
     border: none;
@@ -400,7 +400,7 @@ option {
 ------------------------------------*/
 .hero-area {
     position: relative;
-    background-image: url('../img/hero-area.png');
+    background-image: url('~/Content/img/hero-area.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +169,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\fonts\icofont7858.svg" />
     <Content Include="Content\icofont.css" />
+    <Content Include="Content\icofont.min.css" />
     <Content Include="Content\img\author.png" />
     <Content Include="Content\img\blog-detail.png" />
     <Content Include="Content\img\breadcrumb.png" />
@@ -183,6 +185,7 @@
     <Content Include="Content\img\hero-area.png" />
     <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo\4286961df7084e8aa9e45661cf3e3cc6 %281%29.png" />
     <Content Include="Content\img\news\news1.jpg" />
     <Content Include="Content\img\news\news2.jpg" />
     <Content Include="Content\img\news\news3.jpg" />
@@ -217,6 +220,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="LoginPage\css\style.css" />
+    <Content Include="LoginPage\fonts\fontawesome-webfont.svg" />
+    <Content Include="LoginPage\js\fontawesome.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -239,6 +245,11 @@
     <Content Include="Content\fonts\icofont7858.eot" />
     <Content Include="Content\fonts\icofont7858.ttf" />
     <Content Include="Content\fonts\icofont7858.woff" />
+    <Content Include="LoginPage\fonts\fontawesome-webfont.eot" />
+    <Content Include="LoginPage\fonts\fontawesome-webfont.ttf" />
+    <Content Include="LoginPage\fonts\fontawesome-webfont.woff" />
+    <Content Include="LoginPage\fonts\fontawesome-webfont.woff2" />
+    <Content Include="LoginPage\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\isotope.pkgd.min.js" />
@@ -275,6 +286,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\CategoriesFilter.cshtml" />
+    <Content Include="Views\_LayoutPage1.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
