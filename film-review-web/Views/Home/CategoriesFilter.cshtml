@@ -1,7 +1,10 @@
-﻿@model IEnumerable<film_review_web.Models.genres>
+﻿@{
+    ViewBag.Title = "Genres";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<film_review_web.Models.genres>
 
 @foreach (var item in Model)
 {
     <li><a href="#?genresId=@item.genresId">@item.genresName</a></li>
 }
-
