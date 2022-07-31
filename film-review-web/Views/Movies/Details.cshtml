@@ -1,0 +1,83 @@
+﻿@model film_review_web.Models.movies
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>movies</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.releaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.releaseDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.runTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.runTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.overview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.overview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.images)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.images)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.account.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.account.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genres.genresName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genres.genresName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

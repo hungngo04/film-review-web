@@ -1,0 +1,112 @@
+﻿@model film_review_web.Models.movies
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .form-horizontal{
+        display: flex;
+        flex-direction: column;
+        margin-left: 500px;
+    }
+
+    .form-control {
+        width: 200px;
+    }
+
+    #overview {
+        height: 200px;
+        resize: none;
+        line-height: 30px;
+        word-break: break-word;
+    }
+
+    #form-group-top{
+        margin-top: 150px;
+    }
+</style>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" id="CreateFrom">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group" id="form-group-top">
+        &nbsp;&nbsp;&nbsp;&nbsp;Movie name:
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Release Date:
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.releaseDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.releaseDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Run time:
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.runTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.runTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Rating:
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.rating, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.rating, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Overview
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.overview, new { htmlAttributes = new { @class = "form-control", @id = "overview", @name = "textarea" } })
+            @Html.ValidationMessageFor(model => model.overview, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Genres
+        <div class="col-md-6">
+            @Html.DropDownList("genresId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.genresId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;User id:
+        <div class="col-md-6">
+            @Html.DropDownList("userId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        &nbsp;&nbsp;&nbsp;&nbsp;Image:
+        <div class="col-md-6">
+            @Html.EditorFor(model => model.images, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.images, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
