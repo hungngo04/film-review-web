@@ -33,7 +33,7 @@ namespace film_review_web.Controllers
             {
                 conn.Close();
                 Session["username"] = acc.username;
-                return RedirectToAction("Index", "Home", new { username = acc.username });
+                return RedirectToAction("Index", "Home");
             }
             else
             {

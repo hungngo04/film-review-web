@@ -10,7 +10,7 @@ namespace film_review_web.Controllers
     public class HomeController : Controller
     {
         MoviesDbEntities db = new MoviesDbEntities();
-        public ActionResult Index(string username)
+        public ActionResult Index()
         {
             if(Session["username"] == null)
             {
@@ -18,7 +18,6 @@ namespace film_review_web.Controllers
             }
             else
             {
-                ViewBag.username = username;
                 return View();
             }
         }

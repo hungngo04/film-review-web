@@ -47,10 +47,12 @@
                             <option value="Movies">Movies</option>
                         </select>
                         <input type="text" />
-                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button>
+                            <i class="fa fa-search" style="font-size:15px;"></i>
+                        </button>
                     </form>
                     <ul>
-                        <li><a href="#">Welcome</a></li>
+                        <li><a href="#">Welcome @Session["username"]</a></li>
                         <li><a href="/Login/Logout">Logout</a></li>
                     </ul>
                 </div>
@@ -74,7 +76,7 @@
         </div>
     </header>
     <!-- header section end -->
-   
+
     @RenderBody()
     <!-- footer section start -->
     <footer class="footer">
