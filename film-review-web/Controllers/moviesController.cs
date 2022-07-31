@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,8 +50,15 @@ namespace film_review_web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,name,releaseDate,runTime,rating,overview,genresId,userId,images")] movies movies)
+        public ActionResult Create(movies movies)
         {
+            string fileName = Path.GetFileNameWithoutExtension(movies.ImageFile.FileName);
+            string extension = Path.GetExtension(movies.ImageFile.FileName);
+            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+            movies.images = "~/Content/img/uploaded/" + fileName;
+            fileName = Path.Combine(Server.MapPath("~/Content/img/uploaded/"), fileName);
+            movies.ImageFile.SaveAs(fileName);
+
             if (ModelState.IsValid)
             {
                 db.movies.Add(movies);

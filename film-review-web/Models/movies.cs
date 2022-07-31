@@ -11,7 +11,9 @@ namespace film_review_web.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web;
+
     public partial class movies
     {
         public int id { get; set; }
@@ -23,7 +25,9 @@ namespace film_review_web.Models
         public Nullable<int> genresId { get; set; }
         public Nullable<int> userId { get; set; }
         public string images { get; set; }
-    
+
+        [NotMapped]
+        public HttpPostedFileBase ImageFile { get; set; }
         public virtual account account { get; set; }
         public virtual genres genres { get; set; }
     }

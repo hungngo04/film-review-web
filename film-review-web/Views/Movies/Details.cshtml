@@ -5,79 +5,88 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<!-- breadcrumb area start -->
+<section class="breadcrumb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb-area-content">
+                    <h1>Movie Detailed Page</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- breadcrumb area end -->
+<!-- transformers area start -->
+<section class="transformers-area">
+    <div class="container">
+        <div class="transformers-box">
+            <div class="row flexbox-center">
+                <div class="col-lg-5 text-lg-left text-center">
+                    <div class="transformers-content">
+                        <img src="@Model.images" alt="about" />
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="transformers-content">
+                        <h2>@Model.name</h2>
+                        <p>@Model.id</p>
+                        <ul>
+                            <li>
+                                <div class="transformers-left">
+                                    Time:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.runTime
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Release:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.releaseDate
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Share:
+                                </div>
+                                <div class="transformers-right">
+                                    <a href="#">
+                                        <i class="fa fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- transformers area end -->
+<!-- details area start -->
+<section class="details-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="details-content">
+                    <div class="details-overview">
+                        <h2>Overview</h2>
+                        <p>@Model.overview</p>
+                        <p style="margin-top: 50px;"><b>
+                            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+                            @Html.ActionLink("Back to List", "Index")
+                        </b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div>
-    <h4>movies</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
+   
+</section><!-- details area end -->
 
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.releaseDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.releaseDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.runTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.runTime)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.rating)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.overview)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.overview)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.images)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.images)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.account.username)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.account.username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.genres.genresName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.genres.genresName)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

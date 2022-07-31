@@ -6,10 +6,10 @@
 }
 
 <style>
-    .form-horizontal{
+    .form-horizontal {
         display: flex;
         flex-direction: column;
-        margin-left: 500px;
+        margin-left: 300px;
     }
 
     .form-control {
@@ -22,85 +22,80 @@
         line-height: 30px;
         word-break: break-word;
     }
-
-    #form-group-top{
-        margin-top: 150px;
-    }
 </style>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal" id="CreateFrom">
+
+    <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group" id="form-group-top">
-        &nbsp;&nbsp;&nbsp;&nbsp;Movie name:
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        <div class="form-group" style="margin-top: 100px">
+            Movie name:
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Release Date:
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.releaseDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.releaseDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Run time:
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.runTime, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.runTime, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Rating:
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.rating, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.rating, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Overview
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.overview, new { htmlAttributes = new { @class = "form-control", @id = "overview", @name = "textarea" } })
-            @Html.ValidationMessageFor(model => model.overview, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Genres
-        <div class="col-md-6">
-            @Html.DropDownList("genresId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.genresId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;User id:
-        <div class="col-md-6">
-            @Html.DropDownList("userId", null, htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        &nbsp;&nbsp;&nbsp;&nbsp;Image:
-        <div class="col-md-6">
-            @Html.EditorFor(model => model.images, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.images, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-6">
+            Release date:
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.releaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.releaseDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Run time:
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.runTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.runTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Rating:
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.rating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.rating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Overview:
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.overview, new { htmlAttributes = new { @class = "form-control", @id = "overview" } })
+                @Html.ValidationMessageFor(model => model.overview, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            Genres:
+            <div class="col-md-10">
+                @Html.DropDownList("genresId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.genresId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            User:
+            <div class="col-md-10">
+                @Html.DropDownList("userId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            &nbsp;&nbsp;&nbsp;&nbsp;Image:
+            <div class="col-md-6">
+                <input type="file" name="ImageFile" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
@@ -110,3 +105,5 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+

@@ -289,14 +289,15 @@
     <Content Include="Views\Home\CategoriesFilter.cshtml" />
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Movies\Create.cshtml" />
-    <Content Include="Views\Movies\Delete.cshtml" />
-    <Content Include="Views\Movies\Details.cshtml" />
-    <Content Include="Views\Movies\Edit.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\movies\Create.cshtml" />
+    <Content Include="Views\movies\Delete.cshtml" />
+    <Content Include="Views\movies\Details.cshtml" />
+    <Content Include="Views\movies\Edit.cshtml" />
+    <Content Include="Views\movies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\uploaded\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
