@@ -15,7 +15,7 @@ namespace film_review_web.Controllers
         MoviesDbEntities db = new MoviesDbEntities();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;
-        // GET: Login
+        // GET: Login..
         [HttpGet]
         public ActionResult Login()
         {
