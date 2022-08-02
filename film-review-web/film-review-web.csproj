@@ -186,7 +186,7 @@
     <Content Include="Content\img\hero-area.png" />
     <Content Include="Content\img\loader.gif" />
     <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\logo\4286961df7084e8aa9e45661cf3e3cc6 %281%29.png" />
+    <Content Include="Content\img\logo\logonew.png" />
     <Content Include="Content\img\news\news1.jpg" />
     <Content Include="Content\img\news\news2.jpg" />
     <Content Include="Content\img\news\news3.jpg" />
@@ -286,7 +286,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\CategoriesFilter.cshtml" />
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\movies\Create.cshtml" />
@@ -294,6 +293,7 @@
     <Content Include="Views\movies\Details.cshtml" />
     <Content Include="Views\movies\Edit.cshtml" />
     <Content Include="Views\movies\Index.cshtml" />
+    <Content Include="Views\Home\CategoryView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

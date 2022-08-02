@@ -5,34 +5,51 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<style type="text/css">
+    .table td:first-child, .table th:first-child {
+        min-width: 0;
+        padding: 0;
+    }
+    table {
+        width: 100%;
+    }
+    th {
+        text-align: center;
+    }
+    tr{
+        text-align: center;
+    }
+    tr:hover {
+        background-color: #4b4b4b;
+    }
+</style>
+
+<p style="height: 150px;"></p>
+
 <table class="table">
-    <tr style="margin-top: 100px">
+    <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Movie name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.releaseDate)
+            Release date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.runTime)
+            Run time
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.rating)
+            Rating
+        <th style="width: 60%">
+            Overview
+        </th>
+        <th style="width: 3%">
+            Image
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.overview)
+            Username
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.images)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.account.username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.genres.genresName)
+            Genres name
         </th>
         <th></th>
     </tr>

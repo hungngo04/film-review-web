@@ -36,9 +36,9 @@ namespace film_review_web.Controllers
             return View();
         }
 
-        public ActionResult CategoriesFilter()
+        public ActionResult CategoryView()
         {
-            return PartialView();
+            return PartialView(db.genres.ToList());
         }
     }
 }

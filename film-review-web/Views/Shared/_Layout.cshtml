@@ -62,7 +62,12 @@
                     <div class="mainmenu">
                         <ul id="primary-menu">
                             <li><a class="active" href="~/Home/Index">Home</a></li>
-                            <li><a href="~/Home/CategoriesFilter">Genres</a></li>
+                            <li>
+                                <a href="#">Genres</a>
+                                <ul>
+                                    @Html.Action("CategoryView", "Home")
+                                </ul>
+                            </li>
                             <li>
                                 <a href="#">Pages </a>
                                 <ul>
