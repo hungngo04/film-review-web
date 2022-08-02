@@ -294,6 +294,7 @@
     <Content Include="Views\movies\Edit.cshtml" />
     <Content Include="Views\movies\Index.cshtml" />
     <Content Include="Views\Home\CategoryView.cshtml" />
+    <Content Include="Views\Home\CategoriesShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

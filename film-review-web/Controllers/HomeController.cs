@@ -12,13 +12,15 @@ namespace film_review_web.Controllers
         MoviesDbEntities db = new MoviesDbEntities();
         public ActionResult Index()
         {
+
             if(Session["username"] == null)
             {
                 return RedirectToAction("Login", "Login");
             }
             else
             {
-                return View();
+                List<movies> movies = db.movies.ToList();
+                return View(movies);
             }
         }
 
@@ -39,6 +41,12 @@ namespace film_review_web.Controllers
         public ActionResult CategoryView()
         {
             return PartialView(db.genres.ToList());
+        }
+
+        public ActionResult CategoriesShow(int id)
+        {
+            List<movies> movies = db.movies.Where(x => x.genresId == id).ToList();
+            return View(movies);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<film_review_web.Models.genres>
-
 @foreach (var item in Model)
 {
-    <li><a href="#">@item.genresName</a></li>
+    <li><a href="/Home/CategoriesShow/@item.genresId">@item.genresName</a></li>
 }

@@ -30,7 +30,6 @@
                 <div class="col-lg-7">
                     <div class="transformers-content">
                         <h2>@Model.name</h2>
-                        <p>@Model.id</p>
                         <p>@ViewBag.genresName</p>
                         <ul>
                             <li>
@@ -47,6 +46,14 @@
                                 </div>
                                 <div class="transformers-right">
                                     @Model.releaseDate
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transformers-left">
+                                    Overview:
+                                </div>
+                                <div class="transformers-right">
+                                    @Model.overview
                                 </div>
                             </li>
                             <li>
@@ -70,24 +77,4 @@
     </div>
 </section><!-- transformers area end -->
 <!-- details area start -->
-<section class="details-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9">
-                <div class="details-content">
-                    <div class="details-overview">
-                        <h2>Overview</h2>
-                        <p>@Model.overview</p>
-                        <p style="margin-top: 50px;"><b>
-                            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-                            @Html.ActionLink("Back to List", "Index")
-                        </b></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-   
-</section><!-- details area end -->
 
