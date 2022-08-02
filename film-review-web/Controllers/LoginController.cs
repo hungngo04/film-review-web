@@ -11,7 +11,7 @@ namespace film_review_web.Controllers
 {
     public class LoginController : Controller
     {
-        string ConnectionString = "Data Source=TIENHUNGBA01; Initial Catalog=MoviesDB; Integrated Security=SSPI;";
+        string ConnectionString = "Data Source=DESKTOP-CANCHL9\\SQLEXPRESS; Initial Catalog=MoviesDB; Integrated Security=SSPI;";
         MoviesDbEntities db = new MoviesDbEntities();
         SqlCommand com = new SqlCommand();
         SqlDataReader dr;

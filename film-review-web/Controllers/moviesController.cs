@@ -34,6 +34,7 @@ namespace film_review_web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.genresName = db.genres.Find(movies.genresId).genresName;
             return View(movies);
         }
 
@@ -55,8 +56,8 @@ namespace film_review_web.Controllers
             string fileName = Path.GetFileNameWithoutExtension(movies.ImageFile.FileName);
             string extension = Path.GetExtension(movies.ImageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            movies.images = "~/Content/img/uploaded/" + fileName;
-            fileName = Path.Combine(Server.MapPath("~/Content/img/uploaded/"), fileName);
+            movies.images = "/Content/img/uploaded/" + fileName;
+            fileName = Path.Combine(Server.MapPath("/Content/img/uploaded/"), fileName);
             movies.ImageFile.SaveAs(fileName);
 
             if (ModelState.IsValid)

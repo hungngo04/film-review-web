@@ -25,67 +25,71 @@
 </style>
 
 <p style="height: 150px;"></p>
+<div class="container">
 
-<table class="table">
-    <tr>
-        <th>
-            Movie name
-        </th>
-        <th>
-            Release date
-        </th>
-        <th>
-            Run time
-        </th>
-        <th>
-            Rating
-        <th style="width: 60%">
-            Overview
-        </th>
-        <th style="width: 3%">
-            Image
-        </th>
-        <th>
-            Username
-        </th>
-        <th>
-            Genres name
-        </th>
-        <th></th>
-    </tr>
+    <table class="table ">
+        <tr>
+            <th>
+                Movie name
+            </th>
+            <th>
+                Release date
+            </th>
+            <th>
+                Run time
+            </th>
+            <th>
+                Rating
+            <th style="width: 60%">
+                Overview
+            </th>
+            <th style="width: 3%">
+                Image
+            </th>
+            <th>
+                Username
+            </th>
+            <th>
+                Genres name
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.releaseDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.runTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.overview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.images)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.account.username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.genres.genresName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.releaseDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.runTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.overview)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.images)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.account.username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.genres.genresName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+
+</div>
